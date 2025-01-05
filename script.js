@@ -1,15 +1,14 @@
-// Carousel Animation
-const track = document.querySelector('.carousel-track');
-let currentIndex = 0;
+document.getElementById("unlock-btn").addEventListener("click", () => {
+    const password = document.getElementById("password").value;
+    const errorMsg = document.getElementById("error-msg");
+    const cardsSection = document.getElementById("cards-section");
 
-function moveCarousel() {
-    currentIndex += 1;
-    const items = track.children.length;
-
-    if (currentIndex >= items) {
-        currentIndex = 0;
+    if (password === "iloveyou") {
+        errorMsg.textContent = "";
+        cardsSection.classList.remove("hidden");
+        cardsSection.style.display = "block";
+        document.getElementById("password-section").style.display = "none";
+    } else {
+        errorMsg.textContent = "Incorrect password. Please try again.";
     }
-    track.style.transform = `translateX(-${currentIndex * 320}px)`;
-}
-
-setInterval(moveCarousel, 3000);
+});
