@@ -1,15 +1,43 @@
-// Carousel Animation
-const track = document.querySelector('.carousel-track');
-let currentIndex = 0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love for You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>To My Dearest Love</h1>
+            <p>Every pixel of this page whispers my feelings for you.</p>
+            <a href="#password-section" class="scroll-btn">Enter My Heart</a>
+        </section>
 
-function moveCarousel() {
-    currentIndex += 1;
-    const items = track.children.length;
+        <!-- Password Section -->
+        <section id="password-section" class="password">
+            <h2>Access My Heart</h2>
+            <p>Enter the secret password to unlock my deepest thoughts.</p>
+            <input type="password" id="password" placeholder="Enter Password">
+            <button id="unlock-btn">Unlock</button>
+            <p id="error-msg" class="error-msg"></p>
+        </section>
 
-    if (currentIndex >= items) {
-        currentIndex = 0;
-    }
-    track.style.transform = `translateX(-${currentIndex * 320}px)`;
-}
+        <!-- Hidden Cards Section -->
+        <section id="cards-section" class="cards hidden">
+            <h2>My Messages for You</h2>
+            <div class="card-grid">
+                <!-- Add up to 15 cards -->
+                <div class="card">🌟 You light up my world like no other.</div>
+                <div class="card">💌 I’ve written countless letters in my mind, just for you.</div>
+                <div class="card">🌹 Every day with you feels like a fresh bouquet of roses.</div>
+                <div class="card">⏳ Even if time stops, my love for you won't.</div>
+                <div class="card">🎶 You’re the melody to my life's song.</div>
+            </div>
+        </section>
+    </div>
 
-setInterval(moveCarousel, 3000);
+    <script src="script.js"></script>
+</body>
+</html>
