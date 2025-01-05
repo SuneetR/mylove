@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,97 +6,167 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(120deg, #f6d365, #fda085);
 }
 
-/* Header */
-header {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    color: white;
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
-    padding: 2rem 1rem;
+    color: white;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    animation: bgFade 10s infinite alternate;
 }
 
-header h1 {
-    font-size: 3rem;
+.hero h1 {
+    font-size: 3.5rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-header p {
+.hero p {
     font-size: 1.2rem;
+    margin-bottom: 2rem;
     font-style: italic;
+}
+
+.scroll-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    background: #e57373;
+    border-radius: 50px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.scroll-btn:hover {
+    background: #f48fb1;
+    transform: scale(1.1);
 }
 
 /* Intro Section */
 .intro {
+    padding: 4rem 2rem;
     text-align: center;
-    padding: 2rem 1rem;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 1rem 2rem;
-    border-radius: 10px;
+    background: white;
+    color: #555;
+    border-radius: 20px;
+    margin: 2rem;
+    animation: fadeInUp 1.5s ease-out;
 }
 
 .intro h2 {
-    color: #e57373;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #e57373;
 }
 
 .intro p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
-/* Gallery Section */
+/* Gallery */
 .gallery {
-    padding: 2rem 1rem;
+    padding: 4rem 2rem;
     text-align: center;
 }
 
 .gallery h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     color: #e57373;
-    margin-bottom: 1rem;
 }
 
-.gallery .images {
+.carousel {
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-track {
     display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
+    transition: transform 0.5s ease-in-out;
 }
 
-.gallery .images img {
+.carousel-track img {
     width: 300px;
     height: 200px;
+    margin: 0 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Love Letter Section */
+/* Love Letter */
 .love-letter {
+    padding: 4rem 2rem;
     text-align: center;
-    padding: 2rem 1rem;
     background: #fff;
-    margin: 1rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+    border-radius: 20px;
+    margin: 2rem;
 }
 
 .love-letter h2 {
-    font-size: 2rem;
-    color: #e57373;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #e57373;
 }
 
-.love-letter p {
+.typewriter {
     font-size: 1.2rem;
-    line-height: 1.8;
+    font-family: 'Courier New', monospace;
     white-space: pre-wrap;
+    overflow: hidden;
+    border-right: 3px solid #333;
+    animation: typing 4s steps(30, end), blink 0.5s step-end infinite alternate;
+}
+
+/* Animations */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: black;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bgFade {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
 }
 
 /* Footer */
@@ -105,11 +175,4 @@ footer {
     padding: 1rem;
     background: #fad0c4;
     color: white;
-    font-size: 1rem;
-    margin-top: 2rem;
-}
-
-footer p {
-    font-size: 1rem;
-    font-style: italic;
 }
